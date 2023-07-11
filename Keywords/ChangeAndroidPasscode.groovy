@@ -58,24 +58,24 @@ class ChangeAndroidPasscode {
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Security'), 0)
 
 			//check weather Screen Lock = None or not. If yes, set screen lock = PIN
-			
+
 			try {
 				Mobile.verifyElementExist(findTestObject("Object Repository/Application/android.widget.TextView - None"), 3)
-				
+
 				Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Screen lock'), 0)
-				
+
 				Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - PIN'), 0)
-				
+
 				Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), '1234', 0)
-				
+
 				Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - NEXT'), 0)
-				
+
 				Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), '1234', 0)
-				
+
 				Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - CONFIRM'), 0)
-				
+
 				Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - DONE'), 0)
-				
+
 			} catch (Exception e) {
 				println e
 			}

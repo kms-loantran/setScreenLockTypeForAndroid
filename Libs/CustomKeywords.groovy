@@ -28,14 +28,19 @@ import java.util.List
 import java.lang.Object
 
 
-
+ /**
+	 * Create passcode for the device. This keyword should be called if the device doesn't have any lock settings
+	 */ 
 def static "ChangeAndroidPasscode.createPasscode"(
     	String appId	) {
     (new ChangeAndroidPasscode()).createPasscode(
         	appId)
 }
 
-
+ /**
+	 * Get mobile driver for current session
+	 * @return mobile driver for current session
+	 */ 
 def static "ChangeAndroidPasscode.getCurrentSessionMobileDriver"() {
     (new ChangeAndroidPasscode()).getCurrentSessionMobileDriver()
 }
