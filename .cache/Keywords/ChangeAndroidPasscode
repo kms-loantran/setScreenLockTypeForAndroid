@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "D1D760C8451C49E9CBAB172D0C80D620",
+  "keywordFileContentHash": "F4599DC13824D62BC0B35E6DADA5E441",
   "keywordClasses": [
     {
       "name": "ChangeAndroidPasscode",
@@ -20,16 +20,14 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\n\t * Create passcode for the device. This keyword should be called if the device doesn\u0027t have any lock settings\n\t */"
+          ]
         },
         {
           "name": "getCurrentSessionMobileDriver",
-          "parameters": [],
-          "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
