@@ -30,7 +30,7 @@ def appPath = PathUtil.relativeToAbsolutePath(GlobalVariable.G_AppPath, RunConfi
 
 Mobile.startApplication(appPath, false)
 
-CustomKeywords.'ChangeAndroidPasscode.createPasscode'('1234', 'io.appium.android.apis')
+//CustomKeywords.'ChangeAndroidPasscode.createPasscode'('1234', 'io.appium.android.apis')
 
 Mobile.comment('And he navigates the application to Activity form')
 
