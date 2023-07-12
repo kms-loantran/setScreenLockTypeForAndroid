@@ -59,6 +59,8 @@ class ChangeAndroidPasscode {
 			Mobile.scrollToText('Security')
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Security'), 0)
+			
+			Mobile.scrollToText('Screen lock')
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Screen lock'), 0)
 
