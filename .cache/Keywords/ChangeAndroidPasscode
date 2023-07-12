@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "F4599DC13824D62BC0B35E6DADA5E441",
+  "keywordFileContentHash": "70735EA14B20FB816DDB916F05843EB6",
   "keywordClasses": [
     {
       "name": "ChangeAndroidPasscode",
@@ -7,6 +7,50 @@
         {
           "name": "createPasscode",
           "parameters": [
+            {
+              "name": "passcode",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "appId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "cleanPasscode",
+          "parameters": [
+            {
+              "name": "passcode",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
             {
               "name": "appId",
               "initialExpression": "",

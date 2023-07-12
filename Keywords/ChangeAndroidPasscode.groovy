@@ -40,6 +40,9 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.AndroidDriver
 
 
 class ChangeAndroidPasscode {
@@ -47,7 +50,7 @@ class ChangeAndroidPasscode {
 	 * Create passcode for the device. This keyword should be called if the device doesn't have any lock settings
 	 */
 	@Keyword
-	def createPasscode(String appId) {
+	def createPasscode(String passcode, String appId) {
 		try {
 			AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 
@@ -57,26 +60,92 @@ class ChangeAndroidPasscode {
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Security'), 0)
 
-			Mobile.verifyElementExist(findTestObject("Object Repository/Application/android.widget.TextView - None"), 3)
-
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Screen lock'), 0)
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - PIN'), 0)
 
-			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), '1234', 0)
+			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), passcode, 0)
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - NEXT'), 0)
 
-			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), '1234', 0)
+			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), passcode, 0)
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - CONFIRM'), 0)
 
 			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - DONE'), 0)
 
 			driver.activateApp(appId)
+
 			return true
 		} catch (Exception e) {
 			KeywordUtil.markFailed("Failed to create Android device passcode")
+		}
+		return false;
+	}
+
+	/**
+	 * Create passcode for the device. This keyword should be called if the device doesn't have any lock settings
+	 */
+	@Keyword
+	def cleanPasscode(String passcode, String appId) {
+		try {
+			AndroidDriver<?> driver = MobileDriverFactory.getDriver()
+
+			driver.activateApp('com.android.settings')
+
+			Mobile.scrollToText('Security')
+
+			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - Security (1)'), 0)
+
+			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - PIN (2)'), 0)
+
+			def codes = passcode.toList()
+			codes.each { code ->
+				switch (code) {
+					case "1":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_1))
+						break
+					case "2":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_2))
+						break
+					case "3":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_3))
+						break
+					case "4":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_4))
+						break
+					case "5":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_5))
+						break
+					case "6":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_6))
+						break
+					case "7":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_7))
+						break
+					case "8":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_8))
+						break
+					case "9":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_9))
+						break
+					case "0":
+						driver.pressKey(new KeyEvent(AndroidKey.DIGIT_0))
+						break
+				}
+			}
+			driver.pressKey(new KeyEvent(AndroidKey.ENTER))
+
+			Mobile.tap(findTestObject('Object Repository/Application/android.widget.TextView - None'), 0)
+
+			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - Yes, remove'), 0)
+
+			driver.activateApp(appId)
+
+			return true
+		} catch (Exception e) {
+			e.printStackTrace()
+			KeywordUtil.markFailed("Failed to  Android device passcode")
 		}
 		return false;
 	}
