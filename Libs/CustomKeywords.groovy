@@ -28,9 +28,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.applitools.eyes.RectangleSize
 
 
- /**
-	 * Create passcode for the device. This keyword should be called if the device doesn't have any lock settings
-	 */ 
+
 def static "ChangeAndroidPasscode.createPasscode"(
     	String passcode	
      , 	String appId	) {
@@ -39,9 +37,7 @@ def static "ChangeAndroidPasscode.createPasscode"(
          , 	appId)
 }
 
- /**
-	 * Create passcode for the device. This keyword should be called if the device doesn't have any lock settings
-	 */ 
+
 def static "ChangeAndroidPasscode.cleanPasscode"(
     	String passcode	
      , 	String appId	) {
@@ -50,10 +46,7 @@ def static "ChangeAndroidPasscode.cleanPasscode"(
          , 	appId)
 }
 
- /**
-	 * Get mobile driver for current session
-	 * @return mobile driver for current session
-	 */ 
+
 def static "ChangeAndroidPasscode.getCurrentSessionMobileDriver"() {
     (new ChangeAndroidPasscode()).getCurrentSessionMobileDriver()
 }

@@ -68,7 +68,7 @@ class ChangeAndroidPasscode {
 
 			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), passcode, 0)
 
-			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - NEXT'), 0)
+			Mobile.tap(findTestObject('Object Repository/Application/android.widget.Button - NEXT'), 5)
 
 			Mobile.setText(findTestObject('Object Repository/Application/android.widget.EditText'), passcode, 0)
 
