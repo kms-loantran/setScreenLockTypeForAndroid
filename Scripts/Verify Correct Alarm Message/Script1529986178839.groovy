@@ -20,7 +20,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 Mobile.comment('Story: Verify correct alarm message')
 
 Mobile.comment('Given that user has started an application')
